@@ -14,7 +14,7 @@ const Copy = styled.div`
 const StyledHaxagon1 = styled.div`
     display: flex;
     position: absolute;
-    top: calc(50vh - 80vw * 0.36 / 2);
+    top: calc(50vh - 80vw * 0.36 / 2 - 32px);
     left: calc(50vw - 80vw / 2);
 `;
 const Haxagon1 = () => (
@@ -38,7 +38,7 @@ const Haxagon1 = () => (
 const TitleDiv = styled.div`
     position: absolute;
     left: 32px;
-    bottom: 32px;
+    bottom: 64px;
 `;
 const TitleText = styled.h1`
     line-height: 1;
