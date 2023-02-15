@@ -1,6 +1,25 @@
 import styled from "styled-components";
 import { Speaker } from "../../components/speaker";
 import { SpeakerSquare } from "../../components/speakerSquare";
+import { View } from "../../components/view";
+
+const Outer = styled.div`
+    width: 100%;
+    position: relative;
+`;
+
+const StarDiv = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+`;
+const StarImg = styled.img`
+    display: block;
+    width: 1500px;
+    margin-left: calc(50vw - 700px);
+`;
 
 const Divver = styled.div`
     width: 700px;
@@ -32,70 +51,77 @@ const Speakers = styled.div`
 
 export function MainSpeaker() {
     return (
-        <Divver>
-            <Title>
-                2023 성빈랜드 컨퍼런스는
-                <br />
-                다섯 분의 연사님들과 함께 합니다
-            </Title>
-            <Speakers>
-                <Speaker
-                    speaker={{
-                        name: "박현우",
-                        description:
-                            "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
-                        image: "https://s3.hyuns.dev/hyuns.jpg",
-                        sessionNumber: 1,
-                        title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
-                        link: "https://hyuns.dev",
-                    }}
-                />
-                <Speaker
-                    speaker={{
-                        name: "박현우",
-                        description:
-                            "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
-                        image: "https://s3.hyuns.dev/hyuns.jpg",
-                        sessionNumber: 1,
-                        title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
-                        link: "https://hyuns.dev",
-                    }}
-                />
-                <Speaker
-                    speaker={{
-                        name: "박현우",
-                        description:
-                            "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
-                        image: "https://s3.hyuns.dev/hyuns.jpg",
-                        sessionNumber: 1,
-                        title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
-                        link: "https://hyuns.dev",
-                    }}
-                />
-                <Speaker
-                    speaker={{
-                        name: "박현우",
-                        description:
-                            "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
-                        image: "https://s3.hyuns.dev/hyuns.jpg",
-                        sessionNumber: 1,
-                        title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
-                        link: "https://hyuns.dev",
-                    }}
-                />
-                <Speaker
-                    speaker={{
-                        name: "박현우",
-                        description:
-                            "대각선 스타일이 너무 싫어요. 왜 HTML과 CSS는 대각선 만드는 걸 이렇게 어렵게 만든 것인가!",
-                        image: "https://s3.hyuns.dev/hyuns.jpg",
-                        sessionNumber: 1,
-                        title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
-                        link: "https://hyuns.dev",
-                    }}
-                />
-                <SpeakerSquare />
-            </Speakers>
-        </Divver>
+        <Outer>
+            <View.Pc>
+                <StarDiv>
+                    <StarImg src="/assets/stars.png" />
+                </StarDiv>
+            </View.Pc>
+            <Divver>
+                <Title>
+                    2023 성빈랜드 컨퍼런스는
+                    <br />
+                    다섯 분의 연사님들과 함께 합니다
+                </Title>
+                <Speakers>
+                    <Speaker
+                        speaker={{
+                            name: "박현우",
+                            description:
+                                "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
+                            image: "https://s3.hyuns.dev/hyuns.jpg",
+                            sessionNumber: 1,
+                            title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
+                            link: "https://hyuns.dev",
+                        }}
+                    />
+                    <Speaker
+                        speaker={{
+                            name: "박현우",
+                            description:
+                                "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
+                            image: "https://s3.hyuns.dev/hyuns.jpg",
+                            sessionNumber: 1,
+                            title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
+                            link: "https://hyuns.dev",
+                        }}
+                    />
+                    <Speaker
+                        speaker={{
+                            name: "박현우",
+                            description:
+                                "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
+                            image: "https://s3.hyuns.dev/hyuns.jpg",
+                            sessionNumber: 1,
+                            title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
+                            link: "https://hyuns.dev",
+                        }}
+                    />
+                    <Speaker
+                        speaker={{
+                            name: "박현우",
+                            description:
+                                "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
+                            image: "https://s3.hyuns.dev/hyuns.jpg",
+                            sessionNumber: 1,
+                            title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
+                            link: "https://hyuns.dev",
+                        }}
+                    />
+                    <Speaker
+                        speaker={{
+                            name: "박현우",
+                            description:
+                                "대각선 스타일이 너무 싫어요. 왜 HTML과 CSS는 대각선 만드는 걸 이렇게 어렵게 만든 것인가!",
+                            image: "https://s3.hyuns.dev/hyuns.jpg",
+                            sessionNumber: 1,
+                            title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
+                            link: "https://hyuns.dev",
+                        }}
+                    />
+                    <SpeakerSquare />
+                </Speakers>
+            </Divver>
+        </Outer>
     );
 }
