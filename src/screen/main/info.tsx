@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import { Flex } from "../../components/flex";
 
-const StyledBooks = styled.div``;
+const StyledBooks = styled.div`
+    width: 400px;
+    height: calc(400px * 0.73);
+
+    @media (max-width: 767px) {
+        width: calc(100% - 32px);
+    }
+`;
 const Books = () => (
     <StyledBooks>
         <svg
-            width="400"
-            height="calc(400 * 0.73)"
             viewBox="0 0 715 520"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -280,12 +285,12 @@ const Books = () => (
 const InfoTitle = styled.div`
     color: #0ef032;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 24px;
 `;
 const InfoContent = styled.div`
     font-weight: 500;
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 24px;
     color: #0ef032;
 `;
 
@@ -295,6 +300,13 @@ const Divver = styled.div`
     display: flex;
     align-items: center;
     gap: 32px;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin-left: 0px;
+    }
 `;
 
 export function MainInfo() {

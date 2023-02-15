@@ -3,7 +3,7 @@ import { Flex } from "../../components/flex";
 
 const Outer = styled.div`
     width: 100%;
-    padding: 16px;
+    padding: 16px 0px;
     border-top: solid 1px #0ef032;
     margin-top: 52px;
 `;
@@ -12,8 +12,20 @@ const Divver = styled.div`
     width: 700px;
     padding: 16px;
     margin: 0 auto;
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 `;
 
+const ConferenceInfos = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+`;
 const ConferenceName = styled.div`
     color: #0ef032;
     font-weight: 700;
@@ -24,24 +36,48 @@ const ConferenceText = styled.div`
     font-weight: 700;
     font-size: 36px;
     margin-top: 32px;
+    font-family: "Poppins", sans-serif;
+
+    @media (max-width: 767px) {
+        margin-top: 20px;
+    }
 `;
 
 const RightItem = styled.div`
     margin-top: -12px;
+
+    @media (max-width: 767px) {
+        margin-top: 0px;
+        margin-left: -12px;
+    }
 `;
+
+const Items = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 767px) {
+        width: 100%;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        margin-top: 32px;
+        margin-left: 20px;
+    }
+`;
+
 export function MainFooter() {
     return (
         <Outer>
             <Divver>
-                <Flex.Between>
-                    <Flex.Column>
+                <Flex.ResponsiveBetween>
+                    <ConferenceInfos>
                         <ConferenceName>2023 SBLD Conference</ConferenceName>
                         <ConferenceText>
                             4월 8일 오후 1시 <br />
                             마루180에서 만나요!
                         </ConferenceText>
-                    </Flex.Column>
-                    <Flex.Column>
+                    </ConferenceInfos>
+                    <Items>
                         <RightItem style={{ zIndex: "3" }}>
                             <svg
                                 width="75"
@@ -116,8 +152,8 @@ export function MainFooter() {
                                 />
                             </svg>
                         </RightItem>
-                    </Flex.Column>
-                </Flex.Between>
+                    </Items>
+                </Flex.ResponsiveBetween>
             </Divver>
         </Outer>
     );

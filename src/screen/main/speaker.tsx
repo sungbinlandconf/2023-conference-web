@@ -6,6 +6,10 @@ const Divver = styled.div`
     width: 700px;
     margin: 0 auto;
     padding: 16px;
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 `;
 
 const Title = styled.h2`
@@ -20,6 +24,10 @@ const Speakers = styled.div`
     grid-template-columns: repeat(2, minmax(300px, auto));
     gap: 48px;
     margin-top: 64px;
+
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(1, minmax(300px, auto));
+    }
 `;
 
 export function MainSpeaker() {

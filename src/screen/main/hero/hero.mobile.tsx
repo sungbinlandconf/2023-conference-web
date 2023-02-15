@@ -1,17 +1,27 @@
 import styled from "styled-components";
 
+const Copy = styled.div`
+    width: 100vw;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    text-align: center;
+    color: #30f950;
+    font-size: 12px;
+`;
+
 // 비율: 0.36
 const StyledHaxagon1 = styled.div`
     display: flex;
     position: absolute;
-    top: calc(50vh - 30vw * 0.36 / 2);
-    left: calc(50vw - 30vw / 2);
+    top: calc(50vh - 80vw * 0.36 / 2);
+    left: calc(50vw - 80vw / 2);
 `;
 const Haxagon1 = () => (
     <StyledHaxagon1>
         <svg
-            width="calc(30vw)"
-            height="calc(30vw * 0.36)"
+            width="calc(80vw)"
+            height="calc(80vw * 0.36)"
             viewBox="0 0 625 225"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -25,40 +35,14 @@ const Haxagon1 = () => (
     </StyledHaxagon1>
 );
 
-// 비율: 0.36
-const StyledHaxagon2 = styled.div`
-    display: flex;
-    position: absolute;
-    top: calc(50vh - (100vh - 64px) / 2);
-    left: calc(50vw - (100vw - 64px) / 2);
-`;
-const Haxagon2 = () => (
-    <StyledHaxagon2>
-        <svg
-            width="calc(100vw - 64px)"
-            height="calc(100vh - 64px)"
-            viewBox="0 0 2277 1342"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-        >
-            <path
-                d="M1 1341V206.288L382.081 1H2276V1137.18L1894.05 1341H1Z"
-                stroke="#0EF032"
-                stroke-width="2"
-            />
-        </svg>
-    </StyledHaxagon2>
-);
-
 const TitleDiv = styled.div`
     position: absolute;
-    left: 96px;
-    bottom: 96px;
+    left: 32px;
+    bottom: 32px;
 `;
 const TitleText = styled.h1`
     line-height: 1;
-    font-size: 150px;
+    font-size: min(60px, 13vw);
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: #0ef032;
@@ -67,7 +51,8 @@ const InfoText = styled.div`
     font-family: "Poppins";
     font-weight: 500;
     color: #0ef032;
-    font-size: 48px;
+    font-size: min(32px, 6vw);
+    margin-top: 16px;
 `;
 const Title = () => (
     <TitleDiv>
@@ -88,12 +73,12 @@ const Title = () => (
 
 const StyledSubTitle = styled.div`
     position: absolute;
-    right: 96px;
-    top: 96px;
+    right: 32px;
+    top: 64px;
 `;
 const SubTitleText = styled.div`
     line-height: 1.3;
-    font-size: 90px;
+    font-size: min(72px, 12vw);
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     color: #0ef032;
@@ -114,12 +99,13 @@ const Divver = styled.div`
     height: 100vh;
     padding: 0px 32px;
     position: relative;
+    width: 100%;
 `;
-export function MainHero() {
+export function MainHeroMobile() {
     return (
         <Divver>
+            <Copy>© SungbinLand. 2023 All rights reserved.</Copy>
             <Haxagon1 />
-            <Haxagon2 />
             <Title />
             <SubTitle />
         </Divver>

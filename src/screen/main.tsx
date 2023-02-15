@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { Flex } from "../components/flex";
 import { MainCopyright } from "./main/copyright";
 import { MainDetail } from "./main/detail";

@@ -1,18 +1,19 @@
 import styled from "styled-components";
-import { Flex } from "../../components/flex";
+import { Flex } from "../../../components/flex";
+import { View } from "../../../components/view";
 
 const Divver = styled.div`
     width: 700px;
     padding: 16px;
     margin: 0 auto;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    flex-direction: column;
     color: #0ef032;
 `;
 
 const Copyright = styled.div`
     font-size: 12px;
+    margin-top: 16px;
 `;
 
 const BIDownload = styled.div`
@@ -26,11 +27,10 @@ const Thanks = styled.div`
     font-size: 12px;
 `;
 
-export function MainCopyright() {
+export function MainCopyrightMobile() {
     return (
-        <Divver>
-            <Copyright>© SungbinLand. 2023 All rights reserved.</Copyright>
-            <Flex.Column style={{ alignItems: "flex-end", textAlign: "right" }}>
+        <View.Mobile>
+            <Divver>
                 <BIDownload>
                     Our BI Design{" "}
                     <svg
@@ -47,7 +47,8 @@ export function MainCopyright() {
                     </svg>
                 </BIDownload>
                 <Thanks>Designed by mugba | Developed By HyunsDev</Thanks>
-            </Flex.Column>
-        </Divver>
+                <Copyright>© SungbinLand. 2023 All rights reserved.</Copyright>
+            </Divver>
+        </View.Mobile>
     );
 }

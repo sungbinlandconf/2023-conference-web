@@ -40,6 +40,10 @@ const Divver = styled.div`
     z-index: -1;
     top: 240px;
     right: -200px;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
 `;
 
 export function ScheduleSquare() {

@@ -1,5 +1,8 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { Flex } from "../../components/flex";
 import { ScheduleSquare } from "../../components/scheduleSquare";
+import { View } from "../../components/view";
 
 const Divver = styled.div`
     width: 700px;
@@ -7,6 +10,10 @@ const Divver = styled.div`
     padding: 16px;
     margin-top: 64px;
     position: relative;
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
 `;
 
 const Title = styled.div`
@@ -27,6 +34,7 @@ const StyledRow = styled.div<{ isBreakTime: boolean }>`
     border-bottom: solid 2px #0ef032;
     background-color: ${(props) => (props.isBreakTime ? "#151B15" : "#111211")};
 `;
+
 const RowTime = styled.div`
     flex: 3;
     display: flex;
@@ -60,6 +68,24 @@ const RowName = styled.div`
     align-items: center;
     justify-content: center;
 `;
+
+const StyledRowMobile = styled.div<{ isBreakTime: boolean }>`
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 2px #0ef032;
+    background-color: ${(props) => (props.isBreakTime ? "#151B15" : "#111211")};
+    padding: 12px;
+    gap: 8px;
+`;
+
+const getDevice = () => {
+    if (document.body.offsetWidth < 767) {
+        return "mobile";
+    } else {
+        return "pc";
+    }
+};
+
 function TableRow({
     event,
 }: {
@@ -76,16 +102,36 @@ function TableRow({
     };
 }) {
     return (
-        <StyledRow isBreakTime={!!event.isBreakTime}>
-            <RowTime>
-                {event.time.start}
-                <RowTimeTilde>~</RowTimeTilde>
-                {event.time.end}
-                <RowTimeDuring>{`{${event.time.during}}`}</RowTimeDuring>
-            </RowTime>
-            <RowTitle isBreakTime={!!event.isBreakTime}>{event.title}</RowTitle>
-            <RowName>{event.speaker}</RowName>
-        </StyledRow>
+        <>
+            <View.Pc>
+                <StyledRow isBreakTime={!!event.isBreakTime}>
+                    <RowTime>
+                        {event.time.start}
+                        <RowTimeTilde>~</RowTimeTilde>
+                        {event.time.end}
+                        <RowTimeDuring>{`{${event.time.during}}`}</RowTimeDuring>
+                    </RowTime>
+                    <RowTitle isBreakTime={!!event.isBreakTime}>
+                        {event.title}
+                    </RowTitle>
+                    <RowName>{event.speaker}</RowName>
+                </StyledRow>
+            </View.Pc>
+            <View.Mobile>
+                <StyledRowMobile isBreakTime={!!event.isBreakTime}>
+                    <Flex.Between>
+                        <Flex.Row>
+                            {event.time.start}
+                            <RowTimeTilde>~</RowTimeTilde>
+                            {event.time.end}
+                            <RowTimeDuring>{`{${event.time.during}}`}</RowTimeDuring>
+                        </Flex.Row>
+                        <Flex.Row>{event.speaker}</Flex.Row>
+                    </Flex.Between>
+                    {event.title}
+                </StyledRowMobile>
+            </View.Mobile>
+        </>
     );
 }
 export function MainSchedule() {

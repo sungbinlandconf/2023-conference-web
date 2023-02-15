@@ -32,6 +32,10 @@ const Divver = styled.div`
     width: 250px;
     height: 250px;
     position: relative;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
 `;
 
 export function SpeakerSquare() {

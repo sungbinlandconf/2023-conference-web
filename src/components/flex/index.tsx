@@ -30,6 +30,20 @@ const FlexBetween = styled.div<{ gap?: string }>`
 `;
 
 /**
+ * justify-content: space-between 인 \<Flex\>입니다.
+ */
+const ResponsiveFlexBetween = styled.div<{ gap?: string }>`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ${(props) => props.gap && `gap: ${props.gap}`};
+    @media (max-width: 767px) {
+        justify-content: start;
+        flex-direction: column;
+    }
+`;
+
+/**
  * flex-direction: column 인 \<Flex\>입니다.
  */
 const FlexColumn = styled.div<{ gap?: string }>`
@@ -54,5 +68,6 @@ export const Flex = Object.assign(FlexLayout, {
     Center: FlexCenter,
     Between: FlexBetween,
     Column: FlexColumn,
+    ResponsiveBetween: ResponsiveFlexBetween,
     Row: FlexRow,
 });

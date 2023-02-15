@@ -8,6 +8,12 @@ const Divver = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 32px;
+
+    @media (max-width: 767px) {
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+    }
 `;
 
 const Label = styled.div`
@@ -39,10 +45,15 @@ const TextA = styled.a`
 const PlaceHolder = styled.div`
     width: 320px;
     height: 300px;
-    background-color: #1f1f1f;
+    background-color: #636363;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 767px) {
+        margin-top: 32px;
+        width: 100%;
+    }
 `;
 
 export function MainDetail() {
