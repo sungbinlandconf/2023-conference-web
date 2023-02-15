@@ -14,14 +14,14 @@ const Copy = styled.div`
 const StyledHaxagon1 = styled.div`
     display: flex;
     position: absolute;
-    top: calc(50vh - 30vw * 0.36 / 2);
-    left: calc(50vw - 30vw / 2);
+    top: calc(50vh - 25vw * 0.36 / 2);
+    left: calc(50vw - 25vw / 2);
 `;
 const Haxagon1 = () => (
     <StyledHaxagon1>
         <svg
-            width="calc(30vw)"
-            height="calc(30vw * 0.36)"
+            width="calc(25vw)"
+            height="calc(25vw * 0.36)"
             viewBox="0 0 625 225"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ const TitleDiv = styled.div`
 `;
 const TitleText = styled.h1`
     line-height: 1;
-    font-size: min(128px, 10vw);
+    font-size: min(14vh, 10vw);
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: #0ef032;
@@ -77,7 +77,7 @@ const InfoText = styled.div`
     font-family: "Poppins";
     font-weight: 500;
     color: #0ef032;
-    font-size: min(36px, 4vw);
+    font-size: min(4vh, 4vw);
 `;
 const Title = () => (
     <TitleDiv>
@@ -103,7 +103,7 @@ const StyledSubTitle = styled.div`
 `;
 const SubTitleText = styled.div`
     line-height: 1.3;
-    font-size: min(78px, 6vw);
+    font-size: min(8vh, 6vw);
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     color: #0ef032;

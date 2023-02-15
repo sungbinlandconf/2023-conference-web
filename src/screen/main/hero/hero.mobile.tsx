@@ -28,7 +28,7 @@ const Haxagon1 = () => (
         >
             <path
                 d="M1 223.009V58.0126L105.058 1.99121H624V167.388L519.706 223.009H1Z"
-                stroke="#0EF032"
+                stroke="rgb(14, 240, 50)"
                 stroke-width="2"
             />
         </svg>
@@ -42,7 +42,7 @@ const TitleDiv = styled.div`
 `;
 const TitleText = styled.h1`
     line-height: 1;
-    font-size: min(60px, 13vw);
+    font-size: min(13vh, 13vw);
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: #0ef032;
@@ -51,7 +51,7 @@ const InfoText = styled.div`
     font-family: "Poppins";
     font-weight: 500;
     color: #0ef032;
-    font-size: min(32px, 6vw);
+    font-size: min(4vw, 4vw);
     margin-top: 16px;
 `;
 const Title = () => (
@@ -78,7 +78,7 @@ const StyledSubTitle = styled.div`
 `;
 const SubTitleText = styled.div`
     line-height: 1.3;
-    font-size: min(72px, 12vw);
+    font-size: min(8vh, 8vw);
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     color: #0ef032;
