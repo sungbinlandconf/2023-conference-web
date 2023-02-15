@@ -13,12 +13,12 @@ const StarDiv = styled.div`
     top: 0;
     left: 0;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    width: 100vw;
 `;
 const StarImg = styled.img`
     display: block;
-    width: 1500px;
-    margin-left: calc(50vw - 700px);
+    height: 1500px;
 `;
 
 const Divver = styled.div`
