@@ -36,15 +36,18 @@ const StyledRow = styled.div<{ isBreakTime: boolean }>`
     display: flex;
     border-bottom: solid 2px #0ef032;
     background-color: ${(props) => (props.isBreakTime ? "#151B15" : "#111211")};
-    height: 80px;
+    height: 72px;
 `;
 
 const RowTime = styled.div`
-    width: 200px;
+    width: 232px;
     display: flex;
     gap: 8px;
     padding: 16px 26px;
     align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
 `;
 const RowTimeTilde = styled.span`
     font-weight: 300;
@@ -71,6 +74,7 @@ const RowTitleMobile = styled.div`
 const RowTitleOrder = styled.div`
     width: 30px;
     font-size: 12px;
+    margin-top: -2px;
 `;
 const RowName = styled.div`
     width: 80px;
