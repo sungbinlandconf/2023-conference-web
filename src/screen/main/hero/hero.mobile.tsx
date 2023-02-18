@@ -52,7 +52,8 @@ const TitleText = styled.h1`
 const InfoText = styled.div`
     font-weight: 500;
     color: #0ef032;
-    font-size: min(4vw, 4vw);
+    font-size: max(24px, min(4vh, 4vw));
+    line-height: 1.3;
     margin-top: 16px;
     font-family: "Pretendard-Regular";
 `;
