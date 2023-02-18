@@ -15,6 +15,7 @@ const Divver = styled.div`
 
     @media (max-width: 767px) {
         width: 100%;
+        margin-top: 8px;
     }
 `;
 
@@ -58,7 +59,7 @@ const RowTimeDuring = styled.span`
 const RowTitle = styled.div<{ isBreakTime: boolean }>`
     flex: 6;
     font-weight: ${(props) => (props.isBreakTime ? 500 : 600)};
-    color: ${(props) => (props.isBreakTime ? "#115f1e" : "#0EF032")};
+    color: ${(props) => (props.isBreakTime ? "#136721" : "#0EF032")};
     padding: 16px 16px;
     display: flex;
     align-items: center;
