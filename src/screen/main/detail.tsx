@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Flex } from "../../components/flex";
+import { WEB_VAR } from "../../setting/setting";
 
 const Divver = styled.div`
-    width: 700px;
+    width: ${WEB_VAR.pageWidth};
     padding: 16px;
     margin: 0 auto;
     display: flex;
@@ -56,9 +57,23 @@ const PlaceHolder = styled.div`
     }
 `;
 
+const Map = styled.img`
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-blend-mode: luminosity;
+    background-color: #0ef032;
+
+    @media (max-width: 767px) {
+        margin-top: 32px;
+        width: 100%;
+    }
+`;
+
 export function MainDetail() {
     return (
-        <Divver>
+        <Divver id="detail">
             <Flex.Column gap="32px">
                 <Flex.Column gap="16px">
                     <Label>일시</Label>
@@ -76,7 +91,10 @@ export function MainDetail() {
 
                 <Flex.Column gap="4px">
                     <Label>참여 방법</Label>
-                    <TextA href="https://hyuns.dev">
+                    <TextA
+                        href="https://festa.io/events/3117"
+                        target={"_blank"}
+                    >
                         페스타 신청{" "}
                         <svg
                             width="48"
@@ -93,7 +111,14 @@ export function MainDetail() {
                     </TextA>
                 </Flex.Column>
             </Flex.Column>
-            <PlaceHolder>지도가 들어갈 자리</PlaceHolder>
+
+            <a
+                href="https://maru.org/eventhall?page=1&limit=8"
+                target={"_blank"}
+                rel="noreferrer"
+            >
+                <Map src="/assets/map.png" />
+            </a>
         </Divver>
     );
 }

@@ -3,7 +3,7 @@ import { Flex } from "../../../components/flex";
 import { View } from "../../../components/view";
 
 const Divver = styled.div`
-    width: 700px;
+    width: 100%;
     padding: 16px;
     margin: 0 auto;
     display: flex;
@@ -27,6 +27,16 @@ const Thanks = styled.div`
     font-size: 12px;
 `;
 
+const ThanksLink = styled.a`
+    font-size: 12px;
+    color: #0ef032;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+`;
+
 export function MainCopyrightMobile() {
     return (
         <View.Mobile>
@@ -46,7 +56,19 @@ export function MainCopyrightMobile() {
                         />
                     </svg>
                 </BIDownload>
-                <Thanks>Designed by mugba | Developed By HyunsDev</Thanks>
+                <Thanks>
+                    Designed by{" "}
+                    <ThanksLink
+                        href="https://www.instagram.com/mugba.design"
+                        target={"_blank"}
+                    >
+                        mugba
+                    </ThanksLink>{" "}
+                    | Developed By{" "}
+                    <ThanksLink href="https://hyuns.dev" target={"_blank"}>
+                        HyunsDev
+                    </ThanksLink>
+                </Thanks>
                 <Copyright>© SungbinLand. 2023 All rights reserved.</Copyright>
             </Divver>
         </View.Mobile>

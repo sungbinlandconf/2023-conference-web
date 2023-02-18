@@ -19,13 +19,42 @@ const BlackTriangle = () => (
     </StyledBlackTriangle>
 );
 
-const Square = styled.div`
+const Square1 = styled.div`
     position: absolute;
     top: 0;
     left: 0;
     height: 225px;
     width: 100vw;
-    background: linear-gradient(90deg, #13f337 0%, rgba(19, 243, 55, 0) 96.37%);
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(19, 243, 55, 0.5) 40%,
+        rgba(19, 243, 55, 0.5) 60%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    background-size: 200% auto;
+    animation: liner 10s infinite linear;
+
+    @keyframes liner {
+        0% {
+            background-position: 200% center;
+        }
+        100% {
+            background-position: 0% center;
+        }
+    }
+`;
+const Square2 = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 225px;
+    width: 100vw;
+    background: linear-gradient(
+        90deg,
+        rgba(19, 243, 55, 1) 0%,
+        rgba(19, 243, 55, 0) 96.37%
+    );
 `;
 
 const Divver = styled.div`
@@ -41,7 +70,8 @@ const Divver = styled.div`
 export function SpeakerSquare() {
     return (
         <Divver>
-            <Square />
+            <Square2 />
+            <Square1 />
             <BlackTriangle />
         </Divver>
     );

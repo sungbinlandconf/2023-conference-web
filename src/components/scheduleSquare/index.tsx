@@ -39,7 +39,7 @@ const Divver = styled.div`
     position: absolute;
     z-index: -1;
     top: 240px;
-    right: -200px;
+    right: -150px;
 
     @media (max-width: 767px) {
         display: none;

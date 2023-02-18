@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Flex } from "../../../components/flex";
 import { View } from "../../../components/view";
+import { WEB_VAR } from "../../../setting/setting";
 
 const Divver = styled.div`
-    width: 700px;
+    width: ${WEB_VAR.pageWidth};
     padding: 16px;
     margin: 0 auto;
     display: flex;
@@ -25,6 +26,16 @@ const BIDownload = styled.div`
 
 const Thanks = styled.div`
     font-size: 12px;
+`;
+
+const ThanksLink = styled.a`
+    font-size: 12px;
+    color: #0ef032;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 `;
 
 export function MainCopyrightPc() {
@@ -50,7 +61,19 @@ export function MainCopyrightPc() {
                             />
                         </svg>
                     </BIDownload>
-                    <Thanks>Designed by mugba | Developed By HyunsDev</Thanks>
+                    <Thanks>
+                        Designed by{" "}
+                        <ThanksLink
+                            href="https://www.instagram.com/mugba.design"
+                            target={"_blank"}
+                        >
+                            mugba
+                        </ThanksLink>{" "}
+                        | Developed By{" "}
+                        <ThanksLink href="https://hyuns.dev" target={"_blank"}>
+                            HyunsDev
+                        </ThanksLink>
+                    </Thanks>
                 </Flex.Column>
             </Divver>
         </View.Pc>

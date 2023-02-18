@@ -60,6 +60,8 @@ const Content = styled.div`
 `;
 const Session = styled.div`
     font-size: 14px;
+    display: flex;
+    align-items: center;
 `;
 const Title = styled.div`
     font-size: 28px;
@@ -88,6 +90,20 @@ const Link = styled.a`
     gap: 4px;
 `;
 
+const SessionDots = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: 4px;
+`;
+
+const SessionDot = styled.div`
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    background-color: #0ef032;
+`;
+
 export function Speaker({
     speaker,
 }: {
@@ -105,7 +121,7 @@ export function Speaker({
             <Images>
                 <BackgroundImage />
                 <Image src={speaker.image} />
-                <Link href={speaker.link}>
+                <Link href={speaker.link} target="_blank">
                     slido
                     <svg
                         width="16"
@@ -123,7 +139,16 @@ export function Speaker({
             </Images>
 
             <Content>
-                <Session>세션 0{speaker.sessionNumber}</Session>
+                <Session>
+                    세션 0{speaker.sessionNumber}
+                    <SessionDots>
+                        {Array(speaker.sessionNumber)
+                            .fill(undefined)
+                            .map((e, i) => (
+                                <SessionDot key={i} />
+                            ))}
+                    </SessionDots>
+                </Session>
                 <Title>{speaker.title}</Title>
                 <Name>{speaker.name}</Name>
                 <Description>{speaker.description}</Description>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Speaker } from "../../components/speaker";
 import { SpeakerSquare } from "../../components/speakerSquare";
 import { View } from "../../components/view";
+import { WEB_VAR } from "../../setting/setting";
 
 const Outer = styled.div`
     width: 100%;
@@ -15,6 +16,8 @@ const StarDiv = styled.div`
     display: flex;
     justify-content: center;
     width: 100vw;
+    user-select: none;
+    z-index: -1;
 `;
 const StarImg = styled.img`
     display: block;
@@ -22,7 +25,7 @@ const StarImg = styled.img`
 `;
 
 const Divver = styled.div`
-    width: 700px;
+    width: ${WEB_VAR.pageWidth};
     margin: 0 auto;
     padding: 16px;
 
@@ -51,7 +54,7 @@ const Speakers = styled.div`
 
 export function MainSpeaker() {
     return (
-        <Outer>
+        <Outer id="speaker">
             <View.Pc>
                 <StarDiv>
                     <StarImg src="/assets/stars.png" />
@@ -66,57 +69,57 @@ export function MainSpeaker() {
                 <Speakers>
                     <Speaker
                         speaker={{
-                            name: "박현우",
+                            name: "이기정",
                             description:
-                                "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
-                            image: "https://s3.hyuns.dev/hyuns.jpg",
+                                "UDA를 사용하는 이점 중 하나는 상태 추적이 명확하고 쉬워짐입니다. 신규 서비스를 개발하면서 UDA를 적용하게 된 결정 과정과 적용 후 어떤 개선이 있었는지 이기정님이 공유합니다.",
+                            image: "/assets/이기정.png",
                             sessionNumber: 1,
-                            title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
-                            link: "https://hyuns.dev",
+                            title: "쿠팡플레이 플레이어 UDA 적용기",
+                            link: "https://app.sli.do/event/5LUj2QngkAStUzhMHrkuyk",
                         }}
                     />
                     <Speaker
                         speaker={{
-                            name: "박현우",
+                            name: "윤희성",
                             description:
-                                "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
-                            image: "https://s3.hyuns.dev/hyuns.jpg",
-                            sessionNumber: 1,
-                            title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
-                            link: "https://hyuns.dev",
+                                "우리는 매번 Context를 사용합니다. 하지만 Context가 어떻게 구현되고 작동하는지는 자세히 알지 못합니다. 윤희성님이 Context의 비밀을 밝혀줍니다.",
+                            image: "/assets/윤희성.png",
+                            sessionNumber: 2,
+                            title: "소스코드로 알아보는 안드로이드 Context",
+                            link: "https://app.sli.do/event/wRyskK1WGmXeEmE4fJZ3nh",
                         }}
                     />
                     <Speaker
                         speaker={{
-                            name: "박현우",
+                            name: "이정욱",
                             description:
-                                "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
-                            image: "https://s3.hyuns.dev/hyuns.jpg",
-                            sessionNumber: 1,
-                            title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
-                            link: "https://hyuns.dev",
+                                "나에게 맞는 회사 찾기란 사막에서 오아시스 찾기와 동일합니다. 여러 번의 이직 후 얻은 깨달음을 이정욱님이 공유합니다.",
+                            image: "/assets/이정욱.png",
+                            sessionNumber: 3,
+                            title: "이직! 그거 어떻게 하는 건데?",
+                            link: "https://app.sli.do/event/j5aWrmokbzFUQYMAcbsBWT",
                         }}
                     />
                     <Speaker
                         speaker={{
-                            name: "박현우",
+                            name: "최우성",
                             description:
-                                "안드로이드 세상에 불쑥 나타난 웹 개발자. 안드로이드 세계를 지배하려 이 세계에 강림했다.",
-                            image: "https://s3.hyuns.dev/hyuns.jpg",
-                            sessionNumber: 1,
-                            title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
-                            link: "https://hyuns.dev",
+                                "Compose로 얻을 수 있는 큰 장점 중 하나는 다양한 인터렉션을 구현하기 정말 쉬워졌다는 점 입니다. Canvas를 이용해 화려하고 재밌는 인터렉션을 쉽게 구현하는 방법을 최우성님이 소개합니다.",
+                            image: "/assets/최우성.png",
+                            sessionNumber: 4,
+                            title: "Compose Canvas로 예쁜 인터렉션 구현하기!",
+                            link: "https://app.sli.do/event/oPcNosVFb4a72TZLvXwF4a",
                         }}
                     />
                     <Speaker
                         speaker={{
-                            name: "박현우",
+                            name: "류기민",
                             description:
-                                "대각선 스타일이 너무 싫어요. 왜 HTML과 CSS는 대각선 만드는 걸 이렇게 어렵게 만든 것인가!",
-                            image: "https://s3.hyuns.dev/hyuns.jpg",
-                            sessionNumber: 1,
-                            title: "안드로이드 컨퍼런스에 등장한 웹 개발자",
-                            link: "https://hyuns.dev",
+                                "Compose는 세상에 알려진 지 2년이 지나가고 있습니다. 다양한 기업들이 Compose를 채택하고 있고, 기민님의 회사도 마찬가지입니다. 류기민님은 Compose가 Stable이 되기 전부터 실무에 적용하셨고, 오랫동안 Compose를 써오시면서 느낀 점을 공유합니다.",
+                            image: "/assets/류기민.png",
+                            sessionNumber: 5,
+                            title: "Compose 정식 출시보다 앞섰던 Compose 적용기",
+                            link: "https://app.sli.do/event/ouAL6hcVKjowiR7YvMPLZY",
                         }}
                     />
                     <SpeakerSquare />

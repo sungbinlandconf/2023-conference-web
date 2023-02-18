@@ -17,3 +17,7 @@ body {
     background-color: #111211;
     overflow-x: hidden;
 }
+
+html {
+    scroll-behavior: smooth;
+}

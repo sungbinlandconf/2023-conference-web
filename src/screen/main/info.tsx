@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Flex } from "../../components/flex";
+import { WEB_VAR } from "../../setting/setting";
 
 const StyledBooks = styled.div`
     width: 400px;
@@ -296,7 +297,7 @@ const InfoContent = styled.div`
 
 const Divver = styled.div`
     padding: 64px 16px;
-    margin-left: calc(50vw - 732px / 2);
+    margin-left: calc(50vw - ${WEB_VAR.pageWidth} / 2);
     display: flex;
     align-items: center;
     gap: 32px;
@@ -311,7 +312,7 @@ const Divver = styled.div`
 
 export function MainInfo() {
     return (
-        <Divver>
+        <Divver id="info">
             <Flex.Column gap="16px" style={{ maxWidth: "400px" }}>
                 <InfoTitle>
                     안드로이드 커뮤니티의 새로운 시작,
