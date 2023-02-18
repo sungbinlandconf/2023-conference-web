@@ -30,6 +30,8 @@ body {
     background-color: #111211;
     overflow-x: hidden;
     font-family: "Pretendard-Regular";
+
+    word-break: keep-all;
 }
 
 html {
