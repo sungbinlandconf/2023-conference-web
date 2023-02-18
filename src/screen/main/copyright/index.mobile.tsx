@@ -9,6 +9,7 @@ const Divver = styled.div`
     display: flex;
     flex-direction: column;
     color: #0ef032;
+    font-family: "Poppins", sans-serif;
 `;
 
 const Copyright = styled.div`

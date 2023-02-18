@@ -12,6 +12,7 @@ const Divver = styled.div`
     align-items: flex-end;
     justify-content: space-between;
     color: #0ef032;
+    font-family: "Poppins", sans-serif;
 `;
 
 const Copyright = styled.div`
