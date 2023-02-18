@@ -10,7 +10,8 @@ const Outer = styled.div`
 `;
 
 const Divver = styled.div`
-    width: ${WEB_VAR.pageWidth};
+    max-width: ${WEB_VAR.pageWidth};
+    width: 100%;
     padding: 16px;
     margin: 0 auto;
 

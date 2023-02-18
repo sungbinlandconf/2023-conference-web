@@ -3,7 +3,8 @@ import { Flex } from "../../components/flex";
 import { WEB_VAR } from "../../setting/setting";
 
 const Divver = styled.div`
-    width: ${WEB_VAR.pageWidth};
+    max-width: ${WEB_VAR.pageWidth};
+    width: 100%;
     padding: 16px;
     margin: 0 auto;
     display: flex;
@@ -37,23 +38,14 @@ const TextA = styled.a`
     display: flex;
     align-items: center;
     gap: 8px;
+
+    width: fit-content;
     text-decoration: none;
+    background: linear-gradient(currentColor 0 0) 0 100% / var(--d, 0) 2px
+        no-repeat;
+    transition: 0.5s;
     &:hover {
-        text-decoration: underline;
-    }
-`;
-
-const PlaceHolder = styled.div`
-    width: 320px;
-    height: 300px;
-    background-color: #636363;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media (max-width: 767px) {
-        margin-top: 32px;
-        width: 100%;
+        --d: 100%;
     }
 `;
 

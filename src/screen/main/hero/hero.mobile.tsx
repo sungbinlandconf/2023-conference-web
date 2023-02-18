@@ -43,18 +43,18 @@ const TitleDiv = styled.div`
     bottom: 64px;
 `;
 const TitleText = styled.h1`
-    line-height: 1;
+    line-height: 0.92;
     font-size: min(13vh, 13vw);
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: #0ef032;
 `;
 const InfoText = styled.div`
-    font-family: "Poppins";
     font-weight: 500;
     color: #0ef032;
     font-size: min(4vw, 4vw);
     margin-top: 16px;
+    font-family: "Pretendard-Regular";
 `;
 const Title = () => (
     <TitleDiv>
@@ -68,7 +68,7 @@ const Title = () => (
         <InfoText>
             2023. 4. 8. (토)
             <br />
-            마루100이벤트홀
+            마루180 이벤트홀
         </InfoText>
     </TitleDiv>
 );
@@ -153,8 +153,15 @@ const MenuOverlayRow = styled.a`
     font-size: 16px;
     color: #0ef032;
     text-decoration: none;
+
+    width: fit-content;
+    margin: 0 auto;
+    padding-bottom: 4px;
+    background: linear-gradient(currentColor 0 0) 0 100% / var(--d, 0) 3px
+        no-repeat;
+    transition: 0.5s;
     &:hover {
-        text-decoration: underline;
+        --d: 100%;
     }
 `;
 const MenuOverlayClose = styled.a`
@@ -162,6 +169,8 @@ const MenuOverlayClose = styled.a`
     right: 1px;
     top: 1px;
     z-index: 101;
+    border-left: solid 1px #0ef032;
+    border-bottom: solid 1px #0ef032;
 
     @keyframes fadeIn {
         from {

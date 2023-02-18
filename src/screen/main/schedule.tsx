@@ -6,7 +6,8 @@ import { View } from "../../components/view";
 import { WEB_VAR } from "../../setting/setting";
 
 const Divver = styled.div`
-    width: ${WEB_VAR.pageWidth};
+    max-width: ${WEB_VAR.pageWidth};
+    width: 100%;
     margin: 0 auto;
     padding: 16px;
     margin-top: 64px;
@@ -21,6 +22,7 @@ const Title = styled.div`
     color: #0ef032;
     font-weight: 700;
     font-size: 20px;
+    font-family: "Pretendard-Bold";
 `;
 
 const Table = styled.div`

@@ -19,13 +19,7 @@ const StyledHaxagon1 = styled.div`
     top: calc(50vh - 25vw * 0.36 / 2);
     left: calc(50vw - 25vw / 2);
 `;
-const Dot = styled.div`
-    width: 7px;
-    height: 7px;
-    border-radius: 4px;
-    background-color: #30f950;
-    position: absolute;
-`;
+
 const Haxagon1 = () => (
     <StyledHaxagon1>
         <svg
@@ -41,18 +35,6 @@ const Haxagon1 = () => (
                 stroke-width="2"
             />
         </svg>
-        <Dot
-            style={{
-                bottom: `30px`,
-                left: `30px`,
-            }}
-        />
-        <Dot
-            style={{
-                top: `30px`,
-                right: `30px`,
-            }}
-        />
     </StyledHaxagon1>
 );
 
@@ -92,17 +74,18 @@ const TitleDiv = styled.div`
     bottom: 96px;
 `;
 const TitleText = styled.h1`
-    line-height: 1;
+    line-height: 0.92;
     font-size: min(14vh, 10vw);
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     color: #0ef032;
 `;
 const InfoText = styled.div`
-    font-family: "Poppins";
     font-weight: 500;
     color: #0ef032;
     font-size: min(4vh, 4vw);
+    font-family: "Pretendard-Regular";
+    margin-top: 42px;
 `;
 const Title = () => (
     <TitleDiv>
@@ -116,7 +99,7 @@ const Title = () => (
         <InfoText>
             2023. 4. 8. (토)
             <br />
-            마루100이벤트홀
+            마루180 이벤트홀
         </InfoText>
     </TitleDiv>
 );
@@ -129,7 +112,7 @@ const StyledSubTitle = styled.div`
 const SubTitleText = styled.div`
     line-height: 1.3;
     font-size: min(8vh, 6vw);
-    font-family: "Pretendard-Regular";
+    font-family: "Pretendard-Extrabold";
     font-weight: 800;
     color: #0ef032;
     text-align: right;
@@ -156,10 +139,10 @@ const Divver = styled.div`
 const Menu = styled.div`
     position: fixed;
     top: 16px;
-    right: 0px;
+    left: 100vw;
     text-align: center;
     color: #30f950;
-    font-size: 12px;
+    font-size: 14px;
     z-index: 100;
 
     @media (max-width: 767px) {
@@ -169,11 +152,12 @@ const Menu = styled.div`
 
 const MenuText = styled.div<{ isTop: boolean }>`
     cursor: pointer;
-    margin-right: 32px;
+    margin-right: calc(42px);
     position: absolute;
     top: 0px;
     right: 0px;
     font-family: "Poppins", sans-serif;
+    text-align: right;
 
     @keyframes fadeIn {
         from {
@@ -202,9 +186,9 @@ const MenuText = styled.div<{ isTop: boolean }>`
 `;
 const MenuIcon = styled.div<{ isTop: boolean }>`
     cursor: pointer;
-    margin-right: 25px;
+    margin-right: 32px;
     position: absolute;
-    top: 0px;
+    top: -8px;
     right: 0px;
     backdrop-filter: blur(4px);
 
@@ -263,8 +247,14 @@ const MenuOverlayRow = styled.a`
     font-size: 16px;
     color: #0ef032;
     text-decoration: none;
+    width: fit-content;
+    margin: 0 auto;
+    padding-bottom: 4px;
+    background: linear-gradient(currentColor 0 0) 0 100% / var(--d, 0) 2px
+        no-repeat;
+    transition: 0.5s;
     &:hover {
-        text-decoration: underline;
+        --d: 100%;
     }
 `;
 
@@ -300,14 +290,14 @@ function MainMenuPc() {
 
     return (
         <Menu className="menu">
-            <MenuText onClick={() => setIsOpen(!isOpen)} isTop={isTop}>
+            <MenuText onMouseOver={() => setIsOpen(true)} isTop={isTop}>
                 Menu
             </MenuText>
 
-            <MenuIcon onClick={() => setIsOpen(!isOpen)} isTop={isTop}>
+            <MenuIcon onMouseOver={() => setIsOpen(true)} isTop={isTop}>
                 <svg
-                    width="36"
-                    height="32"
+                    width="48"
+                    height="56"
                     viewBox="0 0 36 32"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"

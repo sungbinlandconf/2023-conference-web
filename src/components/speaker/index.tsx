@@ -56,7 +56,7 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 16px;
+    margin-top: 4px;
 `;
 const Session = styled.div`
     font-size: 14px;
@@ -71,10 +71,15 @@ const Title = styled.div`
 const Description = styled.div`
     font-size: 16px;
     line-height: 24px;
+    max-width: 360px;
+    @media (max-width: 767px) {
+        max-width: 100%;
+    }
 `;
 const Name = styled.div`
     font-size: 20px;
     line-height: 36px;
+    margin-top: -4px;
 `;
 
 const Link = styled.a`
@@ -111,7 +116,7 @@ export function Speaker({
         image: string;
         name: string;
         sessionNumber: number;
-        title: string;
+        title: React.ReactNode;
         description: string;
         link?: string;
     };

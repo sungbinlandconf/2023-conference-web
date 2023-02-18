@@ -32,8 +32,11 @@ const ThanksLink = styled.a`
     color: #0ef032;
     text-decoration: none;
 
+    background: linear-gradient(currentColor 0 0) 0 100% / var(--d, 0) 3px
+        no-repeat;
+    transition: 0.5s;
     &:hover {
-        text-decoration: underline;
+        --d: 100%;
     }
 `;
 

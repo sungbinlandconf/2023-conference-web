@@ -4,7 +4,8 @@ import { View } from "../../../components/view";
 import { WEB_VAR } from "../../../setting/setting";
 
 const Divver = styled.div`
-    width: ${WEB_VAR.pageWidth};
+    max-width: ${WEB_VAR.pageWidth};
+    width: 100%;
     padding: 16px;
     margin: 0 auto;
     display: flex;
@@ -33,8 +34,12 @@ const ThanksLink = styled.a`
     color: #0ef032;
     text-decoration: none;
 
+    padding-bottom: 2px;
+    background: linear-gradient(currentColor 0 0) 0 100% / var(--d, 0) 1px
+        no-repeat;
+    transition: 0.5s;
     &:hover {
-        text-decoration: underline;
+        --d: 100%;
     }
 `;
 
