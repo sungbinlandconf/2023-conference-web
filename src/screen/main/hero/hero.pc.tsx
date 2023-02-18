@@ -219,8 +219,8 @@ const MenuIcon = styled.div<{ isTop: boolean }>`
 `;
 const MenuOverlay = styled.div`
     position: absolute;
-    right: 16px;
-    top: 0px;
+    right: 32px;
+    top: -2px;
     background-color: #111211;
     border: solid 1px #0ef032;
     padding: 16px 0px;
@@ -321,7 +321,7 @@ function MainMenuPc() {
             {isOpen && (
                 <>
                     <MenuFullOverlay onClick={() => setIsOpen(false)} />
-                    <MenuOverlay>
+                    <MenuOverlay onMouseLeave={() => setIsOpen(false)}>
                         <MenuOverlayRow
                             href="#info"
                             onClick={() => setIsOpen(false)}
