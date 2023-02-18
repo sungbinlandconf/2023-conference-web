@@ -58,12 +58,14 @@ const TextA = styled.a`
 `;
 
 const Map = styled.img`
-    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-blend-mode: luminosity;
     background-color: #0ef032;
+    height: 300px;
+    aspect-ratio: 60/49;
+    object-fit: cover;
 
     @media (max-width: 767px) {
         margin-top: 32px;
@@ -75,7 +77,7 @@ export function MainDetail() {
     return (
         <Divver id="detail">
             <Flex.Column gap="32px">
-                <Flex.Column gap="16px">
+                <Flex.Column gap="4px">
                     <Label>일시</Label>
                     <Text1>
                         <span
@@ -89,7 +91,7 @@ export function MainDetail() {
                     </Text1>
                 </Flex.Column>
 
-                <Flex.Column gap="16px">
+                <Flex.Column gap="4px">
                     <Label>장소</Label>
                     <Text2>
                         서울 강남구 역삼로 180,
@@ -125,6 +127,10 @@ export function MainDetail() {
                 href="https://maru.org/eventhall?page=1&limit=8"
                 target={"_blank"}
                 rel="noreferrer"
+                style={{
+                    display: "block",
+                    maxHeight: "300px",
+                }}
             >
                 <Map src="/assets/map.png" />
             </a>

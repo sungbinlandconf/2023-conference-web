@@ -7,6 +7,10 @@ const Outer = styled.div`
     padding: 16px 0px;
     border-top: solid 1px #0ef032;
     margin-top: 52px;
+
+    @media (max-width: 767px) {
+        margin-top: 90px;
+    }
 `;
 
 const Divver = styled.div`
