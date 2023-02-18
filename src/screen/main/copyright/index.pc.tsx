@@ -17,6 +17,7 @@ const Divver = styled.div`
 
 const Copyright = styled.div`
     font-size: 12px;
+    font-weight: 400;
 `;
 
 const BIDownload = styled.div`
@@ -28,6 +29,8 @@ const BIDownload = styled.div`
 
 const Thanks = styled.div`
     font-size: 12px;
+    margin-top: 10px;
+    font-weight: 500;
 `;
 
 const ThanksLink = styled.a`
