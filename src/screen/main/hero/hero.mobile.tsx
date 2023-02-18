@@ -128,11 +128,12 @@ const MenuOverlay = styled.div`
     top: 0px;
     background-color: #111211;
     border: solid 1px #0ef032;
-    padding: 32px 8px;
+    padding: 12px 8px;
+    padding-top: 28px;
     z-index: 100;
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 200px;
     gap: 16px;
 
     @keyframes fadeIn {
@@ -180,6 +181,13 @@ const MenuFullOverlay = styled.div`
     left: 0px;
     top: 0px;
     z-index: 100;
+`;
+const MenuLogoDiv = styled.div`
+    height: 32px;
+    display: flex;
+`;
+const MenuLogo = styled.img`
+    height: 32px;
 `;
 function MainMenuMobile() {
     const [isOpen, setIsOpen] = useState(false);
@@ -254,6 +262,9 @@ function MainMenuMobile() {
                         >
                             장소와 일시
                         </MenuOverlayRow>
+                        <MenuLogoDiv>
+                            <MenuLogo src="/assets/logo_large.png" />
+                        </MenuLogoDiv>
                     </MenuOverlay>
                 </>
             )}

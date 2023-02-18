@@ -237,7 +237,8 @@ const MenuOverlay = styled.div`
     top: 0px;
     background-color: #111211;
     border: solid 1px #0ef032;
-    padding: 32px 8px;
+    padding: 16px 0px;
+    padding-top: 32px;
     z-index: 100;
     display: flex;
     flex-direction: column;
@@ -263,6 +264,15 @@ const MenuOverlayRow = styled.a`
     &:hover {
         text-decoration: underline;
     }
+`;
+
+const MenuLogoDiv = styled.div`
+    height: 32px;
+    display: flex;
+    padding-left: 20px;
+`;
+const MenuLogo = styled.img`
+    height: 32px;
 `;
 const MenuFullOverlay = styled.div`
     position: fixed;
@@ -344,6 +354,9 @@ function MainMenuPc() {
                         >
                             장소와 일시
                         </MenuOverlayRow>
+                        <MenuLogoDiv>
+                            <MenuLogo src="/assets/logo_large.png" />
+                        </MenuLogoDiv>
                     </MenuOverlay>
                 </>
             )}
