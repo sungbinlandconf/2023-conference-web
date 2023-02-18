@@ -23,8 +23,16 @@ const Label = styled.div`
     color: #0ef032;
     font-weight: 700;
 `;
-const Text = styled.div`
-    font-size: 28px;
+const Text1 = styled.div`
+    font-size: 40px;
+    color: #0ef032;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+`;
+const Text2 = styled.div`
+    font-size: 36px;
     color: #0ef032;
     font-weight: 500;
     display: flex;
@@ -32,7 +40,7 @@ const Text = styled.div`
     gap: 8px;
 `;
 const TextA = styled.a`
-    font-size: 28px;
+    font-size: 36px;
     color: #0ef032;
     font-weight: 500;
     display: flex;
@@ -69,16 +77,25 @@ export function MainDetail() {
             <Flex.Column gap="32px">
                 <Flex.Column gap="16px">
                     <Label>일시</Label>
-                    <Text>2023. 4. 8. (토) 13:00</Text>
+                    <Text1>
+                        <span
+                            style={{
+                                fontFamily: '"Poppins", sans-serif',
+                            }}
+                        >
+                            2023. 4. 8.
+                        </span>{" "}
+                        (토) 13:00
+                    </Text1>
                 </Flex.Column>
 
                 <Flex.Column gap="16px">
                     <Label>장소</Label>
-                    <Text>
+                    <Text2>
                         서울 강남구 역삼로 180,
                         <br />
                         마루180 이벤트홀
-                    </Text>
+                    </Text2>
                 </Flex.Column>
 
                 <Flex.Column gap="4px">
