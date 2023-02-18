@@ -93,6 +93,14 @@ const Link = styled.a`
     font-weight: 600;
     display: flex;
     gap: 4px;
+
+    padding-bottom: 2px;
+    background: linear-gradient(currentColor 0 0) 0 100% / var(--d, 0) 1px
+        no-repeat;
+    transition: 0.5s;
+    &:hover {
+        --d: 100%;
+    }
 `;
 
 const SessionDots = styled.div`

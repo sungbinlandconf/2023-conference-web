@@ -6,7 +6,7 @@ const Outer = styled.div`
     width: 100%;
     padding: 16px 0px;
     border-top: solid 1px #0ef032;
-    margin-top: 52px;
+    margin-top: 80px;
 
     @media (max-width: 767px) {
         margin-top: 90px;

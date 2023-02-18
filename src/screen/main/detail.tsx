@@ -63,7 +63,7 @@ const Map = styled.img`
     justify-content: center;
     background-blend-mode: luminosity;
     background-color: #0ef032;
-    height: 300px;
+    height: 336px;
     aspect-ratio: 60/49;
     object-fit: cover;
 
