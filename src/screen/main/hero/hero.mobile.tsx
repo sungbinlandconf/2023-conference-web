@@ -9,6 +9,7 @@ const Copy = styled.div`
     text-align: center;
     color: #30f950;
     font-size: 12px;
+    font-family: "Poppins", sans-serif;
 `;
 
 // 비율: 0.36
@@ -80,7 +81,7 @@ const StyledSubTitle = styled.div`
 const SubTitleText = styled.div`
     line-height: 1.3;
     font-size: min(8vh, 8vw);
-    font-family: "Poppins", sans-serif;
+    font-family: "Pretendard-Regular";
     font-weight: 800;
     color: #0ef032;
     text-align: right;

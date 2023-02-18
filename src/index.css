@@ -6,7 +6,6 @@
     font-weight: 400;
     font-style: normal;
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +15,7 @@
 body {
     background-color: #111211;
     overflow-x: hidden;
+    font-family: "Pretendard-Regular";
 }
 
 html {

@@ -29,15 +29,15 @@ const ConferenceInfos = styled.div`
 `;
 const ConferenceName = styled.div`
     color: #0ef032;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 32px;
+    font-family: "Poppins", sans-serif;
 `;
 const ConferenceText = styled.div`
     color: #104729;
     font-weight: 700;
     font-size: 36px;
     margin-top: 32px;
-    font-family: "Poppins", sans-serif;
 
     @media (max-width: 767px) {
         margin-top: 20px;
