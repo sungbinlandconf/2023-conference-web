@@ -79,13 +79,7 @@ export function MainSpeaker() {
                                 "UDA를 사용하는 이점 중 하나는 상태 추적이 명확하고 쉬워짐입니다. 신규 서비스를 개발하면서 UDA를 적용하게 된 결정 과정과 적용 후 어떤 개선이 있었는지 이기정 님이 공유합니다.",
                             image: "/assets/이기정.png",
                             sessionNumber: 1,
-                            title: (
-                                <>
-                                    쿠팡플레이 플레이어
-                                    <br />
-                                    UDA 적용기
-                                </>
-                            ),
+                            title: "미디어 플레이어 UDA 적용기",
                             link: "https://app.sli.do/event/5LUj2QngkAStUzhMHrkuyk",
                         }}
                     />
