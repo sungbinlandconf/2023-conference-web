@@ -175,7 +175,7 @@ export function MainSchedule() {
                             end: "13:50",
                             during: "40m",
                         },
-                        title: "쿠팡플레이 플레이어 UDA 적용기",
+                        title: "미디어 플레이어 UDA 적용기",
                         speaker: "이기정",
                         order: "01",
                     }}
