@@ -7,6 +7,7 @@ import { MainHero } from "./main/hero";
 import { MainInfo } from "./main/info";
 import { MainSchedule } from "./main/schedule";
 import { MainSpeaker } from "./main/speaker";
+import { MainSponsor } from "./main/sponsor";
 
 export function MainScreen() {
     return (
@@ -16,6 +17,7 @@ export function MainScreen() {
             <MainSpeaker />
             <MainSchedule />
             <MainDetail />
+            <MainSponsor />
             <MainFooter />
             <MainCopyright />
         </Flex.Column>
