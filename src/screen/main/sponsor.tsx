@@ -31,6 +31,7 @@ const Grid = styled.div`
     row-gap: 32px;
 
     @media (max-width: 767px) {
+        justify-content: stretch;
         margin-top: 20px;
         grid-template-columns: repeat(auto-fill, minmax(100px, auto));
     }
@@ -55,16 +56,28 @@ export function MainSponsor() {
             <View.Pc>
                 <Grid>
                     <Title>Sponsor</Title>
-                    {SPONSORS.map((e) => (
-                        <Sponsor src={e.image} />
-                    ))}
+                    {SPONSORS.map((e, i) => {
+                        if (SPONSORS.length < 4 && i === 0) {
+                            return (
+                                <>
+                                    {Array(4 - SPONSORS.length)
+                                        .fill(true)
+                                        .map((e) => (
+                                            <div />
+                                        ))}
+                                    <Sponsor src={e.image} />
+                                </>
+                            );
+                        }
+                        return <Sponsor src={e.image} />;
+                    })}
                 </Grid>
             </View.Pc>
             <View.Mobile>
                 <Title>Sponsor</Title>
                 <Grid>
                     {SPONSORS.map((e) => (
-                        <Sponsor src={e.image} />
+                        <Sponsor key={e.name} src={e.image} />
                     ))}
                 </Grid>
             </View.Mobile>
