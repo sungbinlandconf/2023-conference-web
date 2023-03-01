@@ -66,15 +66,6 @@ export function MainSponsor() {
                     {SPONSORS.map((e) => (
                         <Sponsor src={e.image} />
                     ))}
-                    {SPONSORS.map((e) => (
-                        <Sponsor src={e.image} />
-                    ))}
-                    {SPONSORS.map((e) => (
-                        <Sponsor src={e.image} />
-                    ))}
-                    {SPONSORS.map((e) => (
-                        <Sponsor src={e.image} />
-                    ))}
                 </Grid>
             </View.Mobile>
         </Divver>
