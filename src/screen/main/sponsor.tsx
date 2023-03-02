@@ -33,7 +33,7 @@ const Grid = styled.div`
     @media (max-width: 767px) {
         justify-content: stretch;
         margin-top: 20px;
-        grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+        grid-template-columns: 1fr 1fr 1fr;
     }
 `;
 
