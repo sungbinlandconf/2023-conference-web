@@ -27,7 +27,7 @@ const Grid = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
     margin-top: 64px;
-    gap: 8px;
+    gap: 32px;
     row-gap: 32px;
 
     @media (max-width: 767px) {
