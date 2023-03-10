@@ -1,1 +1,1 @@
-<a href="https://2023.sungbinland.day/" target="_blank"><img src="https://raw.githubusercontent.com/sungbinland/sungbinland-conference-web/e9878ad521405b3d8795217a3b7ed8ebba300065/cover/2023.svg" /></a>
+<a href="https://2023.sungbinland.day/" target="_blank"><img src="/public/OGimg.png" /></a>
