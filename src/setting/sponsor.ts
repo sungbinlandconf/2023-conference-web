@@ -11,11 +11,11 @@ export const SPONSORS: {
         name: "한빛미디어",
     },
     {
-        image: "/assets/제이펍.png",
-        name: "제이펍",
-    },
-    {
         image: "/assets/아이엠.png",
         name: "아이엠",
+    },
+    {
+        image: "/assets/제이펍.png",
+        name: "제이펍",
     },
 ];

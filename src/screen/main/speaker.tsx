@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import { Flex } from "../../components/flex";
 import { Speaker } from "../../components/speaker";
+import { SpeakerPopup } from "../../components/speakerPopup/speakerPopup";
 import { SpeakerSquare } from "../../components/speakerSquare";
 import { View } from "../../components/view";
 import { WEB_VAR } from "../../setting/setting";
@@ -38,9 +40,9 @@ const Divver = styled.div`
 `;
 
 const Title = styled.h2`
-    font-family: "Pretendard";
+    font-family: "Pretendard-Bold";
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 700;
     color: #0ef032;
     line-height: 1.3;
 `;

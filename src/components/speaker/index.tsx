@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { SpeakerPopupContext } from "../../context/speakerPopup.conetex";
 
 const StyledBackgroundImage = styled.div`
     position: absolute;
@@ -129,8 +131,10 @@ export function Speaker({
         link?: string;
     };
 }) {
+    const speakerPopup = useContext(SpeakerPopupContext);
+
     return (
-        <Divver>
+        <Divver onClick={() => speakerPopup.openPopup(speaker.name as any)}>
             <Images>
                 <BackgroundImage />
                 <Image src={speaker.image} />

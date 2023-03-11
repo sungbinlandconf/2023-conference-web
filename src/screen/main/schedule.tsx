@@ -279,7 +279,7 @@ export function MainSchedule() {
                             end: "17:30",
                             during: "20m",
                         },
-                        title: "행사 마무리 및 추가 질문",
+                        title: "행사 마무리 및 자유 네트워킹",
                     }}
                 />
             </Table>

@@ -31,6 +31,8 @@ const Grid = styled.div`
     row-gap: 32px;
 
     @media (max-width: 767px) {
+        gap: 12px;
+        row-gap: 6px;
         justify-content: stretch;
         margin-top: 20px;
         grid-template-columns: 1fr 1fr 1fr;
@@ -42,6 +44,9 @@ const Title = styled.div`
     font-weight: 700;
     font-size: 20px;
     font-family: "Pretendard-Bold";
+    height: 100%;
+    display: flex;
+    align-items: center;
 `;
 
 const Sponsor = styled.img`

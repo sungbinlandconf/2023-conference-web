@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Copy = styled.div`
     width: 100vw;
@@ -217,7 +217,7 @@ const MenuIcon = styled.div<{ isTop: boolean }>`
     ${(props) => !props.isTop && `animation: fadeIn 0.5s 0.3s ease-out both;`}
     ${(props) => props.isTop && `animation: fadeOut 0.5s ease-out forwards;`}
 `;
-const MenuOverlay = styled.div`
+const MenuOverlay = styled.div<{ isOpen: boolean }>`
     position: absolute;
     right: 32px;
     top: -2px;
@@ -231,17 +231,38 @@ const MenuOverlay = styled.div`
     width: 240px;
     gap: 16px;
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(8px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-    }
-    animation: fadeIn 0.3s ease-out forwards;
+    ${(props) =>
+        props.isOpen
+            ? css`
+                  @keyframes fadeIn1 {
+                      from {
+                          opacity: 0;
+                          transform: translateY(8px);
+                      }
+                      to {
+                          opacity: 1;
+                          transform: translateY(0px);
+                      }
+                  }
+                  animation: fadeIn1 0.3s ease-out forwards;
+              `
+            : css`
+                  @keyframes fadeOut1 {
+                      from {
+                          opacity: 1;
+                          transform: translateY(0px);
+                      }
+                      to {
+                          opacity: 0;
+                          transform: translateY(8px);
+                          visibility: hidden;
+                          display: none;
+                          user-select: none;
+                      }
+                  }
+                  user-select: none;
+                  animation: fadeOut1 0.3s ease-out forwards;
+              `}
 `;
 const MenuOverlayRow = styled.a`
     font-size: 16px;
@@ -266,7 +287,7 @@ const MenuLogoDiv = styled.div`
 const MenuLogo = styled.img`
     height: 32px;
 `;
-const MenuFullOverlay = styled.div`
+const MenuFullOverlay = styled.div<{ isOpen: boolean }>`
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -319,39 +340,34 @@ function MainMenuPc() {
             </MenuIcon>
 
             {isOpen && (
-                <>
-                    <MenuFullOverlay onClick={() => setIsOpen(false)} />
-                    <MenuOverlay onMouseLeave={() => setIsOpen(false)}>
-                        <MenuOverlayRow
-                            href="#info"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            컨퍼런스 설명
-                        </MenuOverlayRow>
-                        <MenuOverlayRow
-                            href="#speaker"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            연사 소개
-                        </MenuOverlayRow>
-                        <MenuOverlayRow
-                            href="#schedule"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            스케쥴
-                        </MenuOverlayRow>
-                        <MenuOverlayRow
-                            href="#detail"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            장소와 일시
-                        </MenuOverlayRow>
-                        <MenuLogoDiv>
-                            <MenuLogo src="/assets/logo_large.png" />
-                        </MenuLogoDiv>
-                    </MenuOverlay>
-                </>
+                <MenuFullOverlay
+                    onClick={() => setIsOpen(false)}
+                    isOpen={isOpen}
+                />
             )}
+            <MenuOverlay onMouseLeave={() => setIsOpen(false)} isOpen={isOpen}>
+                <MenuOverlayRow href="#info" onClick={() => setIsOpen(false)}>
+                    컨퍼런스 설명
+                </MenuOverlayRow>
+                <MenuOverlayRow
+                    href="#speaker"
+                    onClick={() => setIsOpen(false)}
+                >
+                    연사 소개
+                </MenuOverlayRow>
+                <MenuOverlayRow
+                    href="#schedule"
+                    onClick={() => setIsOpen(false)}
+                >
+                    스케쥴
+                </MenuOverlayRow>
+                <MenuOverlayRow href="#detail" onClick={() => setIsOpen(false)}>
+                    장소와 일시
+                </MenuOverlayRow>
+                <MenuLogoDiv>
+                    <MenuLogo src="/assets/logo_large.png" />
+                </MenuLogoDiv>
+            </MenuOverlay>
         </Menu>
     );
 }
