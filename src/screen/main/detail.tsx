@@ -73,6 +73,16 @@ const Map = styled.img`
     }
 `;
 
+const MapDiv = styled.div`
+    display: flex;
+    height: 336px;
+
+    @media (max-width: 767px) {
+        margin-top: 32px;
+        width: 100%;
+    }
+`;
+
 export function MainDetail() {
     return (
         <Divver id="detail">
@@ -123,7 +133,7 @@ export function MainDetail() {
                 </Flex.Column>
             </Flex.Column>
 
-            <a
+            {/* <a
                 href="https://maru.org/eventhall?page=1&limit=8"
                 target={"_blank"}
                 rel="noreferrer"
@@ -133,7 +143,19 @@ export function MainDetail() {
                 }}
             >
                 <Map src="/assets/map.png" />
-            </a>
+            </a> */}
+
+            <MapDiv>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.5297477359654!2d127.03665751567836!3d37.49542203595464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca154dd9258e5%3A0xe0888095de7a04b0!2sMARU%20180!5e0!3m2!1sko!2skr!4v1678609426812!5m2!1sko!2skr"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="구글 지도"
+                    width={"100%"}
+                ></iframe>
+            </MapDiv>
         </Divver>
     );
 }
