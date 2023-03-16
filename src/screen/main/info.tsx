@@ -289,6 +289,7 @@ const UnderBook = styled.div`
     @media (max-width: 767px) {
         width: 100%;
         margin-top: -16px;
+        border: 1px dashed #0ef032;
     }
 `;
 

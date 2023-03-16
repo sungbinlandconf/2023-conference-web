@@ -1,7 +1,9 @@
 // Sponsor 업데이트
 
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { View } from "../../components/view";
+import { SponsorPopupContext } from "../../context/sponsorPopup.context";
 import { WEB_VAR } from "../../setting/setting";
 import { SPONSORS } from "../../setting/sponsor";
 
@@ -56,6 +58,8 @@ const Sponsor = styled.img`
 `;
 
 export function MainSponsor() {
+    const sponsorPopup = useContext(SponsorPopupContext);
+
     return (
         <Divver>
             <View.Pc>
@@ -64,17 +68,31 @@ export function MainSponsor() {
                     {SPONSORS.map((e, i) => {
                         if (SPONSORS.length < 4 && i === 0) {
                             return (
-                                <>
+                                <React.Fragment key={i}>
                                     {Array(4 - SPONSORS.length)
                                         .fill(true)
                                         .map((e) => (
                                             <div />
                                         ))}
-                                    <Sponsor src={e.image} />
-                                </>
+                                    <Sponsor
+                                        src={e.image}
+                                        onClick={() => {
+                                            sponsorPopup.openPopup(
+                                                e.name as any
+                                            );
+                                        }}
+                                    />
+                                </React.Fragment>
                             );
                         }
-                        return <Sponsor src={e.image} />;
+                        return (
+                            <Sponsor
+                                src={e.image}
+                                onClick={() => {
+                                    sponsorPopup.openPopup(e.name as any);
+                                }}
+                            />
+                        );
                     })}
                 </Grid>
             </View.Pc>
@@ -82,7 +100,13 @@ export function MainSponsor() {
                 <Title>Sponsor</Title>
                 <Grid>
                     {SPONSORS.map((e) => (
-                        <Sponsor key={e.name} src={e.image} />
+                        <Sponsor
+                            key={e.name}
+                            src={e.image}
+                            onClick={() => {
+                                sponsorPopup.openPopup(e.name as any);
+                            }}
+                        />
                     ))}
                 </Grid>
             </View.Mobile>

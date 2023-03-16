@@ -37,3 +37,12 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*::selection {
+    background-color: rgb(14, 240, 50);
+    color: #000000;
+}

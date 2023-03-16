@@ -75,7 +75,8 @@ const Map = styled.img`
 
 const MapDiv = styled.div`
     display: flex;
-    height: 336px;
+    height: 424px;
+    width: 336px;
 
     @media (max-width: 767px) {
         margin-top: 32px;

@@ -4,6 +4,10 @@ import {
     SpeakerName,
     SpeakerPopupContext,
 } from "../../context/speakerPopup.context";
+import {
+    SponsorName,
+    SponsorPopupContext,
+} from "../../context/sponsorPopup.context";
 
 const Divver = styled.div<{ isDrag: boolean }>`
     display: flex;
@@ -44,15 +48,7 @@ const Divver = styled.div<{ isDrag: boolean }>`
         bottom: 0px !important;
         left: 0px !important;
         max-height: 80vh;
-        overflow-y: overlay;
-    }
-
-    &::-webkit-scrollbar {
-        width: 4px; /* 스크롤바의 너비 */
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: rgba(14, 240, 50, 1);
+        overflow-y: auto;
     }
 `;
 
@@ -75,7 +71,9 @@ const ImageDiv = styled.div`
     height: 350px;
     user-select: none;
     border-bottom: solid 1px hsla(129, 89%, 50%, 1);
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @media (max-width: 767px) {
         width: 100%;
     }
@@ -84,7 +82,7 @@ const ImageDiv = styled.div`
 const Image = styled.img`
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     user-select: none;
 `;
 
@@ -178,16 +176,16 @@ const CloseButtonMobile = styled.div`
     }
 `;
 
-export function SpeakerPopup({
-    speaker,
+export function SponsorPopup({
+    sponsor,
 }: {
-    speaker: {
+    sponsor: {
         imageUrl: string;
-        name: string;
+        name: SponsorName;
         description: React.ReactNode;
     };
 }) {
-    const speakerPopup = useContext(SpeakerPopupContext);
+    const sponsorPopup = useContext(SponsorPopupContext);
 
     const [position, setPosition] = useState({
         x: window.scrollX + 100,
@@ -236,7 +234,7 @@ export function SpeakerPopup({
     }, []);
 
     const closePopup = (e: React.MouseEvent<HTMLDivElement>) => {
-        speakerPopup.closePopup(speaker.name as any);
+        sponsorPopup.closePopup(sponsor.name);
         e.stopPropagation();
     };
 
@@ -251,12 +249,12 @@ export function SpeakerPopup({
                 isDrag={isDrag}
             >
                 <ImageDiv onMouseDown={(e) => mouseDown(e)} ref={ref}>
-                    <Image src={speaker.imageUrl} />
+                    <Image src={sponsor.imageUrl} />
                     <ImgOverlay />
                 </ImageDiv>
                 <Divver2>
-                    <Name>{speaker.name}</Name>
-                    <Description>{speaker.description}</Description>
+                    <Name>{sponsor.name}</Name>
+                    <Description>{sponsor.description}</Description>
                 </Divver2>
 
                 <>

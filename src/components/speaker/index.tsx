@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { SpeakerPopupContext } from "../../context/speakerPopup.conetex";
+import { SpeakerPopupContext } from "../../context/speakerPopup.context";
 
 const StyledBackgroundImage = styled.div`
     position: absolute;
@@ -53,6 +53,13 @@ const Image = styled.img`
     bottom: 30px;
     width: 190px;
     height: 190px;
+    cursor: pointer;
+
+    transform: scale(1);
+    transition: 200ms;
+    &:hover {
+        transform: scale(1.03);
+    }
 `;
 const Content = styled.div`
     display: flex;
@@ -82,6 +89,16 @@ const Name = styled.div`
     font-size: 20px;
     line-height: 36px;
     margin-top: -4px;
+    cursor: pointer;
+
+    width: fit-content;
+    text-decoration: none;
+    background: linear-gradient(currentColor 0 0) 0 100% / var(--d, 0) 2px
+        no-repeat;
+    transition: 0.5s;
+    &:hover {
+        --d: 100%;
+    }
 `;
 
 const Link = styled.a`
@@ -134,10 +151,13 @@ export function Speaker({
     const speakerPopup = useContext(SpeakerPopupContext);
 
     return (
-        <Divver onClick={() => speakerPopup.openPopup(speaker.name as any)}>
+        <Divver>
             <Images>
                 <BackgroundImage />
-                <Image src={speaker.image} />
+                <Image
+                    src={speaker.image}
+                    onClick={() => speakerPopup.openPopup(speaker.name as any)}
+                />
                 <Link href={speaker.link} target="_blank">
                     slido
                     <svg
@@ -167,7 +187,11 @@ export function Speaker({
                     </SessionDots>
                 </Session>
                 <Title>{speaker.title}</Title>
-                <Name>{speaker.name}</Name>
+                <Name
+                    onClick={() => speakerPopup.openPopup(speaker.name as any)}
+                >
+                    {speaker.name}
+                </Name>
                 <Description>{speaker.description}</Description>
             </Content>
         </Divver>
