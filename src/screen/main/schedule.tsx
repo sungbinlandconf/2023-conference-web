@@ -276,8 +276,8 @@ export function MainSchedule() {
                     event={{
                         time: {
                             start: "17:10",
-                            end: "17:30",
-                            during: "20m",
+                            end: "18:30",
+                            during: "80m",
                         },
                         title: "행사 마무리 및 자유 네트워킹",
                     }}
