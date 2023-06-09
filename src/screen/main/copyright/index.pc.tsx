@@ -20,11 +20,13 @@ const Copyright = styled.div`
     font-weight: 400;
 `;
 
-const BIDownload = styled.div`
+const BIDownload = styled.a`
     font-size: 16px;
     font-weight: 600;
     display: flex;
     align-items: center;
+    color: #0ef032;
+    text-decoration: none;
 `;
 
 const Thanks = styled.div`
@@ -55,7 +57,10 @@ export function MainCopyrightPc() {
                 <Flex.Column
                     style={{ alignItems: "flex-end", textAlign: "right" }}
                 >
-                    <BIDownload>
+                    <BIDownload
+                        href="https://drive.google.com/file/d/1nAapRr46FeBW05CglOSOhz3MwJjpjUWP/view?usp=sharing"
+                        target="_blank"
+                    >
                         Our BI Design{" "}
                         <svg
                             width="24"
